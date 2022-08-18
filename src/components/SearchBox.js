@@ -6,7 +6,9 @@ export const SearchBox = (props) => {
       <input
         placeholder="Search..."
         value={props.value}
-        onChange={(event) => props.setSearch(event.target.value)}
+        onChange={(event) =>
+          props.setFilters({ ...props.filters, search: event.target.value })
+        }
       ></input>
     </div>
   );
