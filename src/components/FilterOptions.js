@@ -2,18 +2,19 @@ import React from "react";
 
 export const FilterOptions = (props) => {
   const types = {
-    gender: ["", "Male", "Female", "Genderless", "Unknown"],
-    status: ["", "Dead", "Alive", "Unknown"],
-    species: ["", "Human", "Alien"],
+    Gender: ["", "Male", "Female", "Genderless", "Unknown"],
+    Status: ["", "Dead", "Alive", "Unknown"],
+    Species: ["", "Human", "Alien", "Robot", "Humanoid"],
   };
 
   return (
     <div className="flex flex-row">
       {Object.keys(types).map((val, index) => {
         return (
-          <div className="mx-4">
-            {val}
+          <div className="mx-4 p-1 ">
+            <span className="font-semibold">{val}</span>
             <select
+              className="p-1 ml-2 border-2 border-black rounded-sm"
               name={val}
               key={index}
               onChange={(event) =>
