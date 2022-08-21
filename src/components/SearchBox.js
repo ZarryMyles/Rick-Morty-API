@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const SearchBox = (props) => {
   return (
@@ -9,8 +9,7 @@ export const SearchBox = (props) => {
         value={props.value}
         onChange={(event) =>
           props.setFilters({ ...props.filters, search: event.target.value })
-        }
-      ></input>
+        }></input>
     </div>
   );
 };

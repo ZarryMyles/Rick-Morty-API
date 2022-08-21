@@ -1,18 +1,18 @@
 // Dependencies
-import "./App.css";
-import React, { useState, useEffect } from "react";
+import './App.css';
+import React, { useState, useEffect } from 'react';
 
 // Components
-import CharList from "./components/CharList";
-import { SearchBox } from "./components/SearchBox";
-import { FilterOptions } from "./components/FilterOptions";
+import CharList from './components/CharList';
+import { SearchBox } from './components/SearchBox';
+import { FilterOptions } from './components/FilterOptions';
 
 function App() {
   const [filters, setFilters] = useState({
-    search: "",
-    Status: "",
-    Gender: "",
-    Species: "",
+    search: '',
+    Status: '',
+    Gender: '',
+    Species: ''
   }); // State containing all the filters
   const [pageNumber, setPageNumber] = useState(1); // State containing the page number
   const [chars, setChars] = useState([]); // State to store the character data from the API
@@ -40,13 +40,13 @@ function App() {
   useEffect(() => {
     setPageNumber(1);
     getCharRequest(filters);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [filters]);
 
   // UseEffect triggered when page number is changed (scroll to bottom)
   useEffect(() => {
     getPageIncRequest(filters, pageNumber);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [pageNumber]);
 
   // Function to increment the page number when scroll to bottom is reached
@@ -76,9 +76,7 @@ function App() {
           </div>
         )}
         {loading && (
-          <div className="w-full flex items-center justify-center text-2xl">
-            loading...
-          </div>
+          <div className="w-full flex items-center justify-center text-2xl">loading...</div>
         )}
       </div>
     </div>

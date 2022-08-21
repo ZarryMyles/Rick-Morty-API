@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { CharPopUp } from "./CharPopUpCard";
+import React, { useState } from 'react';
+import { CharPopUp } from './CharPopUpCard';
 
 const CharList = (props) => {
   const [showPopUp, setShowPopUp] = useState(false);
@@ -13,7 +13,9 @@ const CharList = (props) => {
   return (
     <>
       {props.chars.map((char, index) => (
-        <div className="flex md:p-6 p-3 md:w-2/5 md:h-72 h-72 my-5 md:mx-0 mx-2 md:my-2 bg-silver font-mono">
+        <div
+          key={index}
+          className="flex md:p-6 p-3 md:w-2/5 md:h-72 h-72 my-5 md:mx-0 mx-2 md:my-2 bg-silver font-mono">
           <div className="flex-none md:w-48 w-40 md:h-full mb-10 relative z-10 before:absolute before:top-1 before:left-1 before:w-full before:h-full before:bg-tahiti">
             <img
               className="absolute z-10 inset-0 h-full w-full object-cover"
@@ -49,18 +51,13 @@ const CharList = (props) => {
             </div>
             <button
               onClick={() => popUpToggle(char)}
-              className="px-6 h-12  flex justify-center items-center uppercase font-bold md:font-semibold tracking-wider border-2 border-black bg-tahiti hover:bg-white transition-all text-black"
-            >
+              className="px-6 h-12  flex justify-center items-center uppercase font-bold md:font-semibold tracking-wider border-2 border-black bg-tahiti hover:bg-white transition-all text-black">
               More Info
             </button>
           </div>
         </div>
       ))}
-      <CharPopUp
-        showPopUp={showPopUp}
-        setShowPopUp={setShowPopUp}
-        char={popUpData}
-      />
+      <CharPopUp showPopUp={showPopUp} setShowPopUp={setShowPopUp} char={popUpData} />
     </>
   );
 };
