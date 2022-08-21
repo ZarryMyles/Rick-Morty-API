@@ -1,3 +1,5 @@
+// Component to render the search box and change the filters state when the search box value is changed
+
 import React from 'react';
 
 export const SearchBox = (props) => {

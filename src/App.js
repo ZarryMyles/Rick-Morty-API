@@ -78,7 +78,7 @@ function App() {
           </div>
         )}
         {loading && (
-          <div className="w-full flex items-center justify-center text-2xl">loading...</div>
+          <div className="w-full flex items-center justify-center text-2xl">Loading...</div>
         )}
       </div>
     </div>

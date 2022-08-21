@@ -1,6 +1,9 @@
+// Component to render filter options and change the filters state when the filter dropdowns are changed
+
 import React from 'react';
 
 export const FilterOptions = (props) => {
+  // Constant containing the filters and their dropdown options
   const types = {
     Gender: ['', 'Male', 'Female', 'Genderless', 'Unknown'],
     Status: ['', 'Dead', 'Alive', 'Unknown'],
@@ -8,13 +11,13 @@ export const FilterOptions = (props) => {
   };
 
   return (
-    <div data-testid="filters" className="flex flex-row">
+    <div data-testid="filters" className="flex md:flex-row flex-col ">
       {Object.keys(types).map((val, index) => {
         return (
-          <div key={index} className="mx-4 p-1 ">
-            <span className="font-semibold">{val}</span>
+          <div key={index} className="mx-4 md:p-1 p-2 md:block flex justify-between items-center">
+            <span className="font-bold md:font-semibold">{val}</span>
             <select
-              className="p-1 ml-2 border-2 border-black rounded-sm"
+              className="p-1 md:ml-2 ml-5 border-2 border-black rounded-sm"
               name={val}
               key={index}
               onChange={(event) =>

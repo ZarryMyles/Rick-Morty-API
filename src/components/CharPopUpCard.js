@@ -1,13 +1,19 @@
+// Component to render more info about a character when the user clicks on the "Know More" button
+
 import React, { useState, useEffect } from 'react';
 import { CharEpList } from './CharEpList';
 
 export const CharPopUp = (props) => {
+  // States to store character's origin and current location data
   const [originData, setOriginData] = useState([]);
   const [locationData, setLocationData] = useState([]);
 
+  // State to trigger episode list pop up visibility status
   const [showEpisodes, setShowEpisodes] = useState(false);
+  // State to store the episode data to be displayed in the pop up card
   const [episodeData, setEpisodeData] = useState([]);
 
+  // Function to toggle charcter info pop up visibility status
   const handlePopUpClose = () => {
     props.setShowPopUp(false);
     setLocationData([]);
@@ -15,11 +21,13 @@ export const CharPopUp = (props) => {
     setShowEpisodes(false);
   };
 
+  // Function to toggle episode list pop up visibility status
   const episodeOpen = (dat) => {
     setShowEpisodes(!showEpisodes);
     setEpisodeData(dat);
   };
 
+  // Function to fetch character's origin and current location data
   const getData = async () => {
     if (props.char.origin.url) {
       await fetch(props.char.origin.url)
@@ -43,6 +51,7 @@ export const CharPopUp = (props) => {
     }
   };
 
+  // useEffect to fetch character's origin and current location data when the component mounts
   useEffect(() => {
     if (props.showPopUp) {
       getData();
@@ -50,6 +59,7 @@ export const CharPopUp = (props) => {
     // eslint-disable-next-line
   }, [props.showPopUp]);
 
+  // Render nothing if the character info pop up is not visible
   if (!props.showPopUp) return null;
 
   return (
@@ -127,6 +137,7 @@ export const CharPopUp = (props) => {
           </div>
         </div>
       </div>
+      {/* Episode List pop up */}
       {showEpisodes && (
         <CharEpList
           episodes={episodeData}

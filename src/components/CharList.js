@@ -1,10 +1,15 @@
+// Component rendering the character grid based on filters and search box
+
 import React, { useState } from 'react';
 import { CharPopUp } from './CharPopUpCard';
 
 const CharList = (props) => {
+  // State to store the pop up card visibility status
   const [showPopUp, setShowPopUp] = useState(false);
+  // State to store the character data to be displayed in the pop up card
   const [popUpData, setPopUpData] = useState([]);
 
+  // Function to toggle pop up card visibility status
   const popUpToggle = (char) => {
     setPopUpData(char);
     setShowPopUp(!showPopUp);
@@ -57,6 +62,7 @@ const CharList = (props) => {
           </div>
         </div>
       ))}
+      {/* Character info pop up */}
       <CharPopUp showPopUp={showPopUp} setShowPopUp={setShowPopUp} char={popUpData} />
     </>
   );

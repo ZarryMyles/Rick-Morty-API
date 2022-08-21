@@ -1,14 +1,20 @@
+// Component to display the names of episodes the character appeared in
+
 import React, { useEffect, useState } from 'react';
 
 export const CharEpList = (props) => {
+  // State to store the episode names to be displayed in the pop up card
   const [episodes, setEpisodes] = useState([]);
+  // State to store the episode data passed from the parent component (API url of each episode)
   const epList = [props.episodes];
 
+  // Function to toggle episode info pop up visibility status
   const handleClose = () => {
     props.setShowEpisodes(false);
     setEpisodes([]);
   };
 
+  // Function to fetch episode name with each episode number passed as prop
   const fetchEpisodeNames = async (temp) => {
     await fetch(`https://rickandmortyapi.com/api/episode/${temp}`)
       .then((res) => res.json())
@@ -20,8 +26,10 @@ export const CharEpList = (props) => {
       });
   };
 
+  // useEffect to fetch episode name from API url of each episode
   useEffect(() => {
     epList[0].forEach((ep) => {
+      // Getting only the episode number from the end of the url
       let temp = ep.split('/')[ep.split('/').length - 1];
       fetchEpisodeNames(temp);
     });
