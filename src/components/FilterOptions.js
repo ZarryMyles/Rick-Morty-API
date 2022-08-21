@@ -8,7 +8,7 @@ export const FilterOptions = (props) => {
   };
 
   return (
-    <div className="flex flex-row">
+    <div data-testid="filters" className="flex flex-row">
       {Object.keys(types).map((val, index) => {
         return (
           <div key={index} className="mx-4 p-1 ">

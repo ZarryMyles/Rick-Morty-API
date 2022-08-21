@@ -60,7 +60,9 @@ function App() {
   };
   return (
     <div className="flex bg-tahiti min-h-screen font-mono flex-col flex-wrap items-center justify-start ">
-      <div className="md:text-4xl md:font-normal font-bold top-0 flex text-xl justify-center items-center uppercase m-4 md:m-10">
+      <div
+        role="heading"
+        className="md:text-4xl md:font-normal font-bold top-0 flex text-xl justify-center items-center uppercase m-4 md:m-10">
         Characters From Rick and Morty
       </div>
       <div className="flex flex-col md:flex-row my-5">
