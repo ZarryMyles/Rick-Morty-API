@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CharPopUp } from "./CharPopUp";
+import { CharPopUp } from "./CharPopUpCard";
 
 const CharList = (props) => {
   const [showPopUp, setShowPopUp] = useState(false);
@@ -28,6 +28,7 @@ const CharList = (props) => {
                 {char.name}
               </h1>
             </div>
+
             <div className="flex items-baseline my-2">
               <div className="relative text-lg text-black">Species</div>
               <div className="relative font-semibold uppercase text-darkTahiti ml-5">
@@ -47,10 +48,10 @@ const CharList = (props) => {
               </div>
             </div>
             <button
-              onClick={popUpToggle(char)}
-              className="px-6 h-12 uppercase font-semibold tracking-wider border-2 border-black bg-tahiti hover:bg-white transition-all text-black"
+              onClick={() => popUpToggle(char)}
+              className="px-6 h-12  flex justify-center items-center uppercase font-semibold tracking-wider border-2 border-black bg-tahiti hover:bg-white transition-all text-black"
             >
-              Know More
+              More Info
             </button>
           </div>
         </div>

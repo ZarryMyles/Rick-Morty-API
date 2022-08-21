@@ -27,7 +27,7 @@ function App() {
     setLoading(false);
   };
 
-  // Function to fetch the character data from the API on page load and when scroll to bottom is reached
+  // Function to fetch the character data from the API when scroll to bottom is reached
   const getPageIncRequest = async (filters, pageNumber) => {
     const url = `https://rickandmortyapi.com/api/character/?name=${filters.search}&status=${filters.Status}&gender=${filters.Gender}&species=${filters.Species}&page=${pageNumber}`;
     const res = await fetch(url);
@@ -40,11 +40,13 @@ function App() {
   useEffect(() => {
     setPageNumber(1);
     getCharRequest(filters);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]);
 
   // UseEffect triggered when page number is changed (scroll to bottom)
   useEffect(() => {
     getPageIncRequest(filters, pageNumber);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageNumber]);
 
   // Function to increment the page number when scroll to bottom is reached
