@@ -39,16 +39,16 @@ export const CharEpList = (props) => {
       ></div>
       <div
         style={{ zIndex: 70 }}
-        className="bg-silver w-2/5 border-darkTahiti border-2 overflow-auto h-4/5 top-1/5 shadow-2xl rounded-sm"
+        className="bg-silver md:w-2/5 border-darkTahiti border-2 overflow-auto h-4/5 top-1/5 shadow-2xl rounded-sm"
       >
         <div className="flex flex-col z-50 overflow-hidden items-center text-center">
-          <h1 className="relative bg-black flex justify-center items-center w-full flex-none py-2 text-2xl font-semibold text-white">
+          <h1 className="relative bg-black flex justify-center items-center w-full flex-none py-2 text-2xl font-bold md:font-semibold text-white">
             Episodes Featured In
           </h1>
           <div className="flex flex-col w-full overflow-auto">
             {episodes.map((ep) => {
               return (
-                <div className="flex flex-row justify-start pl-4 px-2 w-full overflow-auto">
+                <div className="flex flex-row justify-start md:pl-4 px-2 w-full">
                   <h1 className="relative flex-none py-2">{ep}</h1>
                 </div>
               );
@@ -59,9 +59,9 @@ export const CharEpList = (props) => {
       <button
         onClick={handleClose}
         style={{ zIndex: 70 }}
-        className="px-4 mt-5 h-8 flex justify-center items-center uppercase font-semibold tracking-wider border-2 border-black bg-tahiti hover:bg-white transition-all text-black"
+        className="px-4 mt-5 h-8 flex justify-center items-center uppercase font-bold md:font-semibold tracking-wider border-2 border-black bg-tahiti hover:bg-white transition-all text-black"
       >
-        Back
+        Close
       </button>
     </div>
   );
