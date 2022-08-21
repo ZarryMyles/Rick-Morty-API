@@ -20,7 +20,7 @@ const CharList = (props) => {
       {props.chars.map((char, index) => (
         <div
           key={index}
-          className="flex md:p-6 p-3 md:w-2/5 md:h-72 h-72 my-5 md:mx-0 mx-2 md:my-2 bg-silver font-mono">
+          className="md:border-none border-2 border-black flex md:p-6 p-3 md:w-2/5 md:h-72 h-72 my-5 md:mx-0 mx-2 md:my-2 bg-silver font-mono">
           <div className="flex-none md:w-48 w-40 md:h-full mb-10 relative z-10 before:absolute before:top-1 before:left-1 before:w-full before:h-full before:bg-tahiti">
             <img
               className="absolute z-10 inset-0 h-full w-full object-cover"
