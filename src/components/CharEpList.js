@@ -39,7 +39,7 @@ export const CharEpList = (props) => {
       ></div>
       <div
         style={{ zIndex: 70 }}
-        className="bg-silver md:w-2/5 border-darkTahiti border-2 overflow-auto h-4/5 top-1/5 shadow-2xl rounded-sm"
+        className="bg-silver md:w-2/5 w-10/12 border-darkTahiti border-2 overflow-auto h-4/5 top-1/5 shadow-2xl rounded-sm"
       >
         <div className="flex flex-col z-50 overflow-hidden items-center text-center">
           <h1 className="relative bg-black flex justify-center items-center w-full flex-none py-2 text-2xl font-bold md:font-semibold text-white">

@@ -24,7 +24,7 @@ const CharList = (props) => {
           </div>
           <div className="flex-auto justify-center flex flex-col items-center md:pl-6 pl-6">
             <div className="relative flex flex-wrap md:w-full text-white items-baseline pb-4 md:before:bg-black md:before:absolute md:before:-top-6 md:before:bottom-0 md:before:-left-60 md:before:-right-6">
-              <h1 className="relative w-full flex-none mb-2 text-xl md:text-2xl font-bold md:font-bold md:font-semibold md:text-white text-black">
+              <h1 className="relative w-full flex-none mb-2 text-xl md:text-2xl md:pl-6 font-bold md:font-semibold md:text-white text-black">
                 {char.name}
               </h1>
             </div>
