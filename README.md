@@ -2,11 +2,6 @@
 
 A Web app that allows you to search and look up characters from the Rick and Morty series.\
 Data is provided by the [Rick and Morty API](https://rickandmortyapi.com/).\
-Developed as part of Refrens hiring process assignment.
-
-## Deployment Link
-
-[Here](https://mahanth-refrens.herokuapp.com/).
 
 ## Tech Stack
 
